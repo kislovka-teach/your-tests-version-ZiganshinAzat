@@ -76,7 +76,7 @@ app.MapPost("/projects/add", [Authorize(Roles = "Admin")] async (HttpContext con
 app.MapGet("/projects/{projectId}/issues", [Authorize] async (Guid projectId, IIssueRepository issueRepository) =>
 {
     var issues = await issueRepository.GetAllIssuesOfProject(projectId);
-
+    
     return Results.Ok(issues);
 });
 
