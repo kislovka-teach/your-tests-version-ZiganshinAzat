@@ -11,5 +11,5 @@ public interface IProjectRepository
     /// <summary>
     /// получить список проектов, в которых участвует пользователь
     /// </summary>
-    Task<List<Project>> GetAllProjectsByUser(User user);
+    Task<List<Project>> GetAllProjectsByUser(String userLogin);
 }

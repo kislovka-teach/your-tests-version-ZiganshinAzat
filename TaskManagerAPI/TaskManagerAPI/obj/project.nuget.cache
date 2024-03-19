@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bElRQWFpWXjyH+R+7KUJeIkpqMIwSKW4wECM03rzvT+s8OL26DFokl0WLTfbcylrSgWIaUKH7VbY3TQw9tj9PQ==",
+  "dgSpecHash": "IC8vKMtnvPWBiLFhDHKcp3vKX3Y5GK9Vu94o/GnqM2bsvbmDdwClkbqanN/RsrxUibIbbb4YnCay7KQ+yGculA==",
   "success": true,
   "projectFilePath": "/Users/ziganshinazat/Desktop/Test ASP.NET/your-tests-version-ZiganshinAzat/TaskManagerAPI/TaskManagerAPI/TaskManagerAPI.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,7 @@
     "/Users/ziganshinazat/.nuget/packages/microsoft.extensions.options/9.0.0-preview.2.24128.5/microsoft.extensions.options.9.0.0-preview.2.24128.5.nupkg.sha512",
     "/Users/ziganshinazat/.nuget/packages/microsoft.extensions.primitives/9.0.0-preview.2.24128.5/microsoft.extensions.primitives.9.0.0-preview.2.24128.5.nupkg.sha512",
     "/Users/ziganshinazat/.nuget/packages/mono.texttemplating/3.0.0-preview-0045-g9b6fc72764/mono.texttemplating.3.0.0-preview-0045-g9b6fc72764.nupkg.sha512",
+    "/Users/ziganshinazat/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
     "/Users/ziganshinazat/.nuget/packages/npgsql/8.0.2/npgsql.8.0.2.nupkg.sha512",
     "/Users/ziganshinazat/.nuget/packages/npgsql.entityframeworkcore.postgresql/9.0.0-preview.1/npgsql.entityframeworkcore.postgresql.9.0.0-preview.1.nupkg.sha512",
     "/Users/ziganshinazat/.nuget/packages/system.codedom/6.0.0/system.codedom.6.0.0.nupkg.sha512",

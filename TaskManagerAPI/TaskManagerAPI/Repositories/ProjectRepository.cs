@@ -4,8 +4,14 @@ using TaskManagerAPI.Entities;
 
 namespace TaskManagerAPI.Repositories;
 
-public class ProjectRepository(AppDbContext appDbContext): IProjectRepository
+public class ProjectRepository: IProjectRepository
 {
+    private readonly AppDbContext appDbContext;
+
+    public ProjectRepository(AppDbContext appDbContext)
+    {
+        this.appDbContext = appDbContext;
+    }
     public async Task<Project> Add(Project project)
     {
         var result = await appDbContext.Projects.AddAsync(project);
@@ -17,10 +23,10 @@ public class ProjectRepository(AppDbContext appDbContext): IProjectRepository
         return appDbContext.Projects.ToListAsync();
     }
     
-    public async Task<List<Project>> GetAllProjectsByUser(User user)
+    public async Task<List<Project>> GetAllProjectsByUser(String userLogin)
     {
         var issues = await appDbContext.Issues
-            .Where(i => i.UserLogin == user.Login)
+            .Where(i => i.UserLogin == userLogin)
             .ToListAsync();
 
         var projectIds = issues.Select(i => i.ProjectId).Distinct();

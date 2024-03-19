@@ -5,10 +5,10 @@ namespace TaskManagerAPI.Repositories;
 
 public class CommentRepository(AppDbContext appDbContext): ICommentRepository
 {
-    public async Task<List<Comment>> GetAllCommentsOfIssue(Issue issue)
+    public async Task<List<Comment>> GetAllCommentsOfIssue(Guid issueId)
     {
         var comments = await appDbContext.Comments
-            .Where(comment => comment.IssueId == issue.IssueId)
+            .Where(comment => comment.IssueId == issueId)
             .ToListAsync();
 
         return comments;
@@ -27,8 +27,15 @@ public class CommentRepository(AppDbContext appDbContext): ICommentRepository
         appDbContext.Comments.Update(comment);
     }
 
-    public void RemoveComment(Comment comment)
+    public async void RemoveComment(Guid commentId)
     {
-        appDbContext.Comments.Remove(comment);
+        appDbContext.Comments.Remove(await GetCommentById(commentId));
+    }
+    
+    public async Task<Comment> GetCommentById(Guid commentId)
+    {
+        var comment = await appDbContext.Comments.FindAsync(commentId);
+
+        return comment;
     }
 }

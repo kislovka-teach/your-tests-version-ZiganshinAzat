@@ -6,10 +6,10 @@ namespace TaskManagerAPI.Repositories;
 
 public class IssueRepository(AppDbContext appDbContext): IIssueRepository
 {
-    public async Task<List<Issue>> GetAllIssuesOfProject(Project project)
+    public async Task<List<Issue>> GetAllIssuesOfProject(Guid projectId)
     {
         var issues = await appDbContext.Issues
-            .Where(issue => issue.ProjectId == project.ProjectId)
+            .Where(issue => issue.ProjectId == projectId)
             .ToListAsync();
 
         return issues;
@@ -27,10 +27,10 @@ public class IssueRepository(AppDbContext appDbContext): IIssueRepository
         appDbContext.Issues.Update(issue);
     }
 
-    public async Task<List<Issue>> GetAllUserIssues(User user)
+    public async Task<List<Issue>> GetAllUserIssues(String userLogin)
     {
         var issues = await appDbContext.Issues
-            .Where(issue => issue.UserLogin == user.Login)
+            .Where(issue => issue.UserLogin == userLogin)
             .ToListAsync();
 
         return issues;
